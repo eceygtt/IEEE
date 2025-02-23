@@ -1,4 +1,9 @@
-
+!pip install shiny
+import scanpy as sc
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import matplotlib as mpl
 
 UPLOAD_FOLDER = "uploads"
 STATIC_FOLDER = "static"
