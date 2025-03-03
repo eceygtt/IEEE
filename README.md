@@ -17,3 +17,8 @@ How to Use
    ```bash
    pip install shiny scanpy matplotlib and then
    run the app with "shiny run" command :)
+
+<img width="432" alt="Ekran Resmi 2025-03-03 15 04 59" src="https://github.com/user-attachments/assets/d4b6b3b9-27db-4fbe-917c-131f50511e23" />
+
+
+
