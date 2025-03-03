@@ -39,13 +39,13 @@ def server(input, output, session):
             return "Henüz bir dosya yüklenmedi."
 
         # Dosya bilgilerini upload kalsörüne kopyalar (shuthil fonk.).
-        file_info = file[0]  # İlk dosyayı al
-        file_path = os.path.join(UPLOAD_FOLDER, file_info["name"])
-        shutil.copy(file_info["datapath"], file_path)
+        file_info = file[0]  #ilk dosyayı alır
+        file_path = os.path.join(UPLOAD_FOLDER, file_info["name"]) #geçici dosya yolu oluşturulur.
+        shutil.copy(file_info["datapath"], file_path) # yüklenen dosyayı geçici yoldan upload folder klasörüne kopyalar.
 
-        # ZIP dosyasını aç
-        with zipfile.ZipFile(file_path, 'r') as zip_ref:
-            zip_ref.extractall(UPLOAD_FOLDER)
+        # ZIP dosyasını aç, with bloğu zip dosyasını işlem bitince kapatır.
+        with zipfile.ZipFile(file_path, 'r') as zip_ref:  #'r' modu dosyayı okuma modunda açmak için kullanılır.
+            zip_ref.extractall(UPLOAD_FOLDER) #zip dosyasının içindekileri upload_folder klasörüne çıkarır.
 
         # process_h5ad fonk. .h5ad dosyasını bulur, işler.
         h5ad_file = [f for f in os.listdir(UPLOAD_FOLDER) if f.endswith(".h5ad")][0]
